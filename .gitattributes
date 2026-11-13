@@ -1,0 +1,7 @@
+# AutoHotkey 脚本在 Windows 上以 CRLF 检出（AHK 对换行不敏感，但 CRLF 与本地编辑器一致）
+*.ahk     text eol=crlf
+*.ini     text eol=crlf
+*.example text eol=crlf
+*.md      text eol=lf
+*.ico     binary
+*.exe     binary

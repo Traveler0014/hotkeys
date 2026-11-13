@@ -1,0 +1,38 @@
+; 示例配置：把它复制成 hotkeys.ini 即可使用（或直接用托盘菜单「热键设置」生成）
+; 编码 UTF-8，分号开头是注释
+; 删除 hotkeys.ini 就回到 lib\Config.ahk 里的内置默认值
+
+[general]
+; 启动器的默认工作目录
+home=C:\Users\你的用户名\Documents
+; 置顶时给窗口标题加的前缀，留空表示只置顶、不改标题
+topmostPrefix=
+; 上线闹钟：探测间隔(ms) / 单次超时(ms) / 命中蜂鸣次数 / 是否额外弹窗(0/1)
+alarmInterval=5000
+alarmPingTimeout=800
+alarmBeeps=3
+alarmPopup=0
+; 是否写 logs\ 运行日志(0/1)
+logEnabled=1
+
+[apps]
+count=2
+
+[app1]
+; 热键写法：^=Ctrl  !=Alt  +=Shift  #=Win，例如 ^!t 就是 Ctrl+Alt+T
+key=^!t
+label=终端 (Windows Terminal)
+; 程序路径；也可以只写 wt.exe 让系统按 PATH 查找
+exe=C:\Users\你的用户名\AppData\Local\Microsoft\WindowsApps\wt.exe
+args=
+workdir=
+; 1 = 已在运行时激活窗口，不再开新实例
+activateIfRunning=0
+
+[app2]
+key=#e
+label=资源管理器
+exe=C:\Windows\explorer.exe
+args=
+workdir=
+activateIfRunning=0

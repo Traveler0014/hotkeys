@@ -1,0 +1,20 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = false
+
+# AutoHotkey v2 需要 UTF-8 BOM 才能正确识别中文，且习惯用 CRLF
+[*.ahk]
+charset = utf-8-bom
+end_of_line = crlf
+
+[*.{bat,ps1}]
+end_of_line = crlf
+
+[*.md]
+trim_trailing_whitespace = false
