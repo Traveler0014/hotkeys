@@ -371,7 +371,11 @@ Settings_EditApp(index) {
 }
 
 Settings_PickExe(ctrl) {
-    path := FileSelect(3, '', '选择程序', '程序 (*.exe)|*.exe|所有文件 (*.*)|*.*')
+    ; v2 的 Filter 只写一个过滤器描述（如 '程序 (*.exe)'），
+    ; 不要再拼 v1 那种 "描述|通配符" 的多段写法——v2 取第一个 '(' 到最后一个 ')' 之间
+    ; 的内容作为通配符，管道符会污染 pattern 导致筛选失效；
+    ; "所有文件 (*.*)" 由系统对话框自动提供。
+    path := FileSelect('3', '', '选择程序', '程序 (*.exe)')
     if (path != '')
         ctrl.Value := path
 }
